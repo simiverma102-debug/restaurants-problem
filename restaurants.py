@@ -1,6 +1,14 @@
 def most_varied_visitor(visits):
-    # Write your solution here!
-    pass
+    unique_count = {}
+    for visitors in visits.values():
+        for visitor in set(visitors):
+            unique_count[visitor] = unique_count.get(visitor, 0) + 1
+    if not unique_count:
+        return None
+    
+    return max(unique_count, key=unique_count.get)             
+
+
 
 
 visits_1 = {
